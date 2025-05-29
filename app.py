@@ -13,7 +13,7 @@ with open('transformer.pkl','rb') as file:
 def prediction(input_list):
     input_list = np.array(input_list,dtype=object)
     
-    pred = model.prdict_proba([input_list])[:,1][0]
+    pred = model.predict_proba([input_list])[:,1][0]
     
     if pred>0.5:
         return f'This booking is more likely to get canceled, chances {round(pred,2)}'
